@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart City Issue Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .form-group {
+      display: flex;           /* side by side */
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    .form-group label {
+      width: 120px;            /* fixed width for labels */
+      font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+      flex: 1;                 /* take remaining space */
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Report an Infrastructure Issue</h2>
+  <form action="/submit" method="POST">
+    
+    <div class="form-group">
+      <label>City:</label>
+      <input type="text" name="city" required>
+    </div>
+
+    <div class="form-group">
+      <label>Area:</label>
+      <input type="text" name="area" required>
+    </div>
+
+    <div class="form-group">
+      <label>Street:</label>
+      <input type="text" name="street" required>
+    </div>
+
+    <div class="form-group">
+      <label>Issue:</label>
+      <select name="issue" required>
+        <option value="Streetlight">Broken Streetlight</option>
+        <option value="Pothole">Pothole</option>
+        <option value="Garbage">Garbage Overflow</option>
+        <option value="Water Leakage">Water Leakage</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
